@@ -1,0 +1,285 @@
+
+/**  Bootstrap overide  1080px **/
+
+@media (max-width: 1800px) { 
+  body {
+	  margin: 0;
+	  padding: 0;                      
+    font-family: 'Open Sans', sans-serif;
+	  font-size: 13px;
+	  line-height: 26px;
+	  color: #777580;
+	  -webkit-font-smoothing: subpixel-antialiased;
+	  -webkit-text-size-adjust: 100%;	
+	  cursor:default;
+    background: #fff;
+  }
+
+  @-moz-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+  @-webkit-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+  @-o-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+  @-ms-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+  @keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+
+  #my-background {
+    background: #348cb2 url("../img/recuerdos.jpg") bottom left;
+    background-repeat: repeat-x;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    -moz-animation: animatedBackground 60s linear infinite;
+    -webkit-animation: animatedBackground 60s linear infinite;
+    -o-animation: animatedBackground 60s linear infinite;
+    -ms-animation: animatedBackground 60s linear infinite;
+    animation: animatedBackground 60s linear infinite;
+
+    background-size: 2250px auto;
+    width: 6750px;
+  }
+  header{
+    width:100%;
+    position:relative;
+    height:auto;
+   
+    max-height:650px; 
+    color:#000;
+    /*background:url(../img/header.jpg) center top repeat-x;*/
+    display:block;
+    padding-bottom:1.8%;
+  }
+  .square-all-top {
+    margin:0px auto;
+    overflow:hidden;
+    max-width:370px;
+    max-height:370px;
+    margin-top:4%;
+    margin-bottom:0%;
+  }
+}
+
+/**  Bootstrap overide  1024px **/
+
+@media (max-width: 1024px) {
+  .spacer160 {
+    height:140px !important;
+  }
+    .spacer35 {
+    height:20px !important;
+  }
+}
+
+
+/**  Bootstrap overide  768px **/
+
+@media (max-width: 768px) {
+  body {
+    padding-right: 0px;
+    padding-left: 0px;
+  }  
+  ul.navi{
+    //display:none;
+      width:500px;
+      height:85px;
+  }
+  ul.navi li {
+    margin-left: 1%;
+  }
+  ul.navi li a{
+    background-image: url(../img/button-menu-small.png);
+    width: 65px;
+    height: 65px;
+  }
+  ul.navi li a:hover {
+    background-position: 0 -65px;
+  }
+  ul.navi li a.active {
+    background-position: 0 -130px;
+  }
+  [class*=" icon-"] {
+    font-size:2em;
+    vertical-align: inherit;
+  }
+  .select-menu {
+    font-family: "Open Sans",Arial,sans-serif;
+    margin-top:35px;
+    width:80%;
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #7A828B;
+    color: #7A828B;
+    display: none;//inline-block;
+    font-size: 14px;
+    font-weight:500;
+    padding:10px 10px;
+    height:45px;
+  } 
+  .spacer160 {
+    height:140px !important;
+  }
+    .spacer35 {
+    height:20px !important;
+  }
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }  
+  .flex-control-paging li a {width: 13px; height: 13px; display: block; background: #d4d2da; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 13px; -o-border-radius: 13px; border-radius: 13px; box-shadow: inset 0 0 0px rgba(0,0,0,0.3);}  
+  .send-form-input{
+    border: none;
+    width:98%;
+  }
+} 
+
+
+/**  Bootstrap overide  568px **/
+
+@media (max-width: 568px) {
+  .spacer160 {
+    height:115px !important;
+  }
+    .spacer35 {
+    height:20px !important;
+  }
+  ul.navi{
+    //display:none;
+      width:400px;
+      height:65px;
+  }
+  ul.navi li {
+    margin-left: 1%;
+  }
+  ul.navi li a{
+    background-image: url(../img/button-menu-small-1.png);
+    width: 50px;
+    height: 50px;
+  }
+  ul.navi li a:hover {
+    background-position: 0 -50px;
+  }
+  ul.navi li a.active {
+    background-position: 0 -100px;
+  }
+  [class*=" icon-"] {
+    font-size:1.5em;
+    top: -0.5em;
+    position: relative;
+  }
+}
+
+/**  Bootstrap overide  480px **/
+
+@media (max-width: 480px) {
+  .flex-control-nav {
+    bottom: -33px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .spacer160 {
+    height:110px !important;
+  }
+    .spacer35 {
+    height:20px !important;
+  }
+  .flexslider {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0 solid #FFFFFF;
+    border-radius: 0 0 0 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    margin: 0 0 30px;
+    position: relative;
+  }
+   .flex-control-paging li a {width: 12px; height: 12px; display: block; background: #d4d2da; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 12px; -moz-border-radius: 12px; -o-border-radius: 12px; border-radius: 12px; box-shadow: inset 0 0 0px rgba(0,0,0,0.3);}
+    
+  .square {
+    background: #83adff url(../img/photo-icon.png) center center no-repeat;
+  }
+  ul.navi{
+    //display:none;
+      width:310px;
+      height:55px;
+  }
+  ul.navi li {
+    margin-left: 1%;
+  }
+  ul.navi li a{
+    background-image: url(../img/button-menu-small-2.png);
+    width: 40px;
+    height: 40px;
+  }
+  ul.navi li a:hover {
+    background-position: 0 -40px;
+  }
+  ul.navi li a.active {
+    background-position: 0 -80px;
+  }
+  [class*=" icon-"] {
+    font-size:1.5em;
+    top: -0.8em;
+    position: relative;
+  }
+}
+
+/**  Bootstrap overide  380px **/
+
+@media (max-width: 380px) {
+  .spacer160 {
+    height:100px !important;
+  }
+    .spacer35 {
+    height:5px !important;
+  }
+}
+
+/**  Bootstrap overide  320px **/
+
+@media (max-width: 320px) {
+  .flex-control-nav {
+    bottom: -33px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .spacer160 {
+    height:105px !important;
+  }
+    .spacer35 {
+    height:10px !important;
+  }
+  ul.navi{
+    //display:none;
+      width:270px;
+      height:50px;
+  }
+  ul.navi li {
+    margin-left: 1%;
+  }
+  ul.navi li a{
+    background-image: url(../img/button-menu-small-3.png);
+    width: 35px;
+    height: 35px;
+  }
+  ul.navi li a:hover {
+    background-position: 0 -35px;
+  }
+  ul.navi li a.active {
+    background-position: 0 -70px;
+  }
+  [class*=" icon-"] {
+    font-size:1.4em;
+    top: -1em;
+    position: relative;
+  }
+}
+
+/**  Bootstrap overide  240px **/
+
+@media (max-width: 240px) {
+  .spacer160 {
+    height:110px !important;
+  }
+    .spacer35 {
+    height:5px !important;
+  } 
+}
