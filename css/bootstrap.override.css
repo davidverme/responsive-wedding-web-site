@@ -1,43 +1,4 @@
-
-/**  Bootstrap overide  1080px **/
-
-@media (max-width: 1800px) { 
-  body {
-	  margin: 0;
-	  padding: 0;                      
-    font-family: 'Open Sans', sans-serif;
-	  font-size: 13px;
-	  line-height: 26px;
-	  color: #777580;
-	  -webkit-font-smoothing: subpixel-antialiased;
-	  -webkit-text-size-adjust: 100%;	
-	  cursor:default;
-    background: #fff;
-  }
-
-  @-moz-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-3072px,0,0); -webkit-transform: translate3d(-3072px,0,0); -o-transform: translate3d(-3072px,0,0); -ms-transform: translate3d(-3072px,0,0); transform: translate3d(-3072px,0,0); } }
-  @-webkit-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-3072px,0,0); -webkit-transform: translate3d(-3072px,0,0); -o-transform: translate3d(-3072px,0,0); -ms-transform: translate3d(-3072px,0,0); transform: translate3d(-3072px,0,0); } }
-  @-o-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-3072px,0,0); -webkit-transform: translate3d(-3072px,0,0); -o-transform: translate3d(-3072px,0,0); -ms-transform: translate3d(-3072px,0,0); transform: translate3d(-3072px,0,0); } }
-  @-ms-keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-3072px,0,0); -webkit-transform: translate3d(-3072px,0,0); -o-transform: translate3d(-3072px,0,0); -ms-transform: translate3d(-3072px,0,0); transform: translate3d(-3072px,0,0); } }
-  @keyframes animatedBackground { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-3072px,0,0); -webkit-transform: translate3d(-3072px,0,0); -o-transform: translate3d(-3072px,0,0); -ms-transform: translate3d(-3072px,0,0); transform: translate3d(-3072px,0,0); } }
-
-  #my-background {
-    background: #348cb2 url("../img/recuerdos.jpg") bottom left;
-    background-repeat: repeat-x;
-    height: 100%;
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    -moz-animation: animatedBackground 60s linear infinite;
-    -webkit-animation: animatedBackground 60s linear infinite;
-    -o-animation: animatedBackground 60s linear infinite;
-    -ms-animation: animatedBackground 60s linear infinite;
-    animation: animatedBackground 60s linear infinite;
-
-    background-size: 3072px auto;
-    width: 6144px;
-  }
+@media (max-width: 1800px) {
   header{
     width:100%;
     position:relative;
@@ -45,7 +6,6 @@
    
     max-height:650px; 
     color:#000;
-    /*background:url(../img/header.jpg) center top repeat-x;*/
     display:block;
     padding-bottom:1.8%;
   }
