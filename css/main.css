@@ -1,9 +1,9 @@
 #my-background {
-    -moz-animation: great-effect 50s linear infinite;
-    -webkit-animation: great-effect 50s linear infinite;
-    -o-animation: great-effect 50s linear infinite;
-    -ms-animation: great-effect 50s linear infinite;
-    animation: great-effect 50s linear infinite;
+    -moz-animation: great-effect 60s linear infinite;
+    -webkit-animation: great-effect 60s linear infinite;
+    -o-animation: great-effect 60s linear infinite;
+    -ms-animation: great-effect 60s linear infinite;
+    animation: great-effect 60s linear infinite;
     /* Set your background with this */
     background: #348cb2 url("../img/recuerdos.jpg");
     height: 100%;
