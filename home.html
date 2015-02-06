@@ -2,10 +2,26 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Naty y David</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <title>FancyCollage</title>
+    <link href="css/fancyCollage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="my-background"></div>
+    <div class="myFancyCollage" style="width: 100%; height: 600px; background-color: yellow; position: relative;"></div>
 </body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/fancyCollage.js"></script>
+<script type="application/javascript">
+    $(document).ready(function(){
+        $(".myFancyCollage").fancyCollage({
+            pictures: [
+                {src: "img/photos/480-1.jpg"},
+                {src: "img/photos/480-2.jpg"},
+                {src: "img/photos/480-3.jpg"},
+                {src: "img/photos/480-4.jpg"},
+                {src: "img/photos/240-1.jpg"},
+                {src: "img/photos/240-2.jpg"}
+            ]
+        });
+    })
+</script>
 </html>
