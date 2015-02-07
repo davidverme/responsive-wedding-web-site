@@ -11,8 +11,3 @@ e("<option />",{selected:"selected",value:"",text:"Navigation"}).appendTo(".sele
         $("#my-fancy-collage").fancyCollage(data);
     });
 });
-
-$(window).resize(function(){
-    $("header").css("height", $(window).height());
-    //$("#my-background").css("background-size", "auto " + ($(window).height() * 1.5).toString() + "px");
-});
