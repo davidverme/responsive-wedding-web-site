@@ -745,6 +745,12 @@ input[type="submit"] {
   clear:both;
 }
 
+
+.spacer100 {
+  height:100px;
+  clear:both;
+}
+
 .spacer160 {
   height:160px;
   clear:both;
