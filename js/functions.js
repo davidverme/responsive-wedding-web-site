@@ -8,6 +8,6 @@ e("<option />",{selected:"selected",value:"",text:"Navigation"}).appendTo(".sele
     //$("#my-background").css("background-size", "auto " + ($(window).height() * 1.5).toString() + "px");
 
     $.getJSON("img/collage.js", function(data){
-        $("#my-fancy-collage").fancyCollage(data);
+        //$("#my-fancy-collage").fancyCollage(data);
     });
 });
