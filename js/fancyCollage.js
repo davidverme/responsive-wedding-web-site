@@ -143,6 +143,24 @@
         return array;
     }
 
+    function loadPicture(me, callback) {
+        var d = document.createElement("div");
+        item = $(d);
+        item.css("opacity", "0")
+            .css({backgroundImage : 'url("' + me._randomOrderPictures[me._pictureIndex].src + '")'})
+            .appendTo(me._randomOrderItems[me._elementIndex]);
+
+        item.ready(function(){
+                setTimeout(function(){
+                    item.css("opacity", "1");
+
+                    me._pictureIndex ++;
+                    me._elementIndex ++;
+                    loadNextPicture(me, callback);
+                }, 500);
+            })
+    }
+
     function loadNextPicture(me, callback){
         if(!me._randomOrderPictures){
             me._randomOrderPictures = me.options.pictures;    
@@ -163,34 +181,17 @@
         }
 
         var item;
-        var timeToWait;
-        if($(me._randomOrderItems[me._elementIndex]).has("div").length === 0){
-            timeToWait = 500;
-            var d = document.createElement("div");
-            item = $(d);
-            item.appendTo(me._randomOrderItems[me._elementIndex])
-                .css("opacity", "0")
-                .css({backgroundImage : 'url("' + me._randomOrderPictures[me._pictureIndex].src + '")'});
-        } else {
-            timeToWait = 2000;
+        if($(me._randomOrderItems[me._elementIndex]).has("div").length !== 0){
             item = $($(me._randomOrderItems[me._elementIndex]).children()[0]);
             item.css("opacity", "0");
 
             setTimeout(function(){
-                item.css({backgroundImage : 'url("' + me._randomOrderPictures[me._pictureIndex].src + '")'})
+                item.remove();
+                loadPicture(me, callback);
             },2000)
+        } else {
+            loadPicture(me, callback);
         }
-
-
-        item.ready(function(){
-                setTimeout(function(){
-                    item.css("opacity", "1");
-                    loadNextPicture(me, callback);
-                }, timeToWait);
-            })
-
-        me._pictureIndex ++;
-        me._elementIndex ++;
     }
 
     FancyCollage.prototype.loadPictures= function (callback) {
