@@ -31,7 +31,9 @@
     };
 
     FancyCollage.prototype.init = function () {
+        debugger;
         this._pictureIndex = 0;
+        this._elementIndex = 0;
         this.createBoxes();
         this.makeItFancy();
         this.loadPictures(function(){
@@ -124,27 +126,46 @@
 
     };
 
+    function randomOrder(array){
+        var currentIndex = array.length, temporaryValue, randomIndex ;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+
     function loadNextPicture(me, callback){
-        var pictures = me.options.pictures;
-        var l = me._items;
-        if($(".fancyCollageItem").length === $(".fancyCollageItem div").length){
+        if(!me._randomOrderPictures){
+            me._randomOrderPictures = me.options.pictures;    
+            randomOrder(me._randomOrderPictures);
+        }
+
+        if(!me._randomOrderItems){
+            me._randomOrderItems = $(".fancyCollageItem");
+            randomOrder(me._randomOrderItems);
+        }
+
+        if(me._elementIndex > me._randomOrderItems.length){
             callback();
         } else {
-            var posX = Math.floor(Math.random() * (me._rows));
-            var posY = Math.floor(Math.random() * (me._columns));
-            while (!l[posX][posY] || $(l[posX][posY]).has("div").length != 0) {
-                posX = Math.floor(Math.random() * (me._rows));
-                posY = Math.floor(Math.random() * (me._columns));
-            }
-
-            if(!me._pictureIndex || me._pictureIndex === -1){
-                me._pictureIndex = pictures.length - 1;
+            if(me._pictureIndex > me._randomOrderPictures.length){
+                me._pictureIndex = 0;
             }
 
             var i =document.createElement("div");
-            $(i).css("background-image", "url(" + pictures[me._pictureIndex].src + ")")
+            $(i).css("background-image", "url(" + me._randomOrderPictures[me._pictureIndex].src + ")")
                 .css("opacity", "0")
-                .appendTo($(l[posX][posY]))
+                .appendTo(me._randomOrderItems[me._elementIndex])
                 .ready(function(){
                     setTimeout(function(){
                         $(".fancyCollageItem div").css("opacity", "1");
@@ -152,7 +173,8 @@
                     }, 500);
                 });
 
-            me._pictureIndex = me._pictureIndex - 1;
+            me._pictureIndex ++;
+            me._elementIndex ++;
         }
     }
 

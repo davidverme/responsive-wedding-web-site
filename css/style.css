@@ -18,6 +18,22 @@ body {
   overflow-x: hidden;
 }
 
+#my-fancy-collage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#home {
+  height: 70%;
+}
+
+.full-height {
+  height: 100%;
+}
+
 .main-content {
   position: absolute;
   width: 100%;
@@ -319,6 +335,10 @@ header{
   max-height:370px;
   margin-top:4%;
   margin-bottom:2%;
+  -webkit-transform: translateY(15%);
+  -moz-transform: translateY(15%);
+  -ms-transform: translateY(15%);
+  transform: translateY(15%);
 }
 
 .square-all-top img {
@@ -328,8 +348,8 @@ header{
        -moz-border-radius: 50%;
             border-radius: 50%;
     opacity:.5;
-    max-width:370px;
-    max-height:370px;
+    max-width:270px;
+    max-height:270px;
 }
 
 /** BOTTOM CIRCLE IMAGE **/
@@ -463,6 +483,7 @@ ul.navi li {
 
 ul.navi li a{
   background-image: url(../img/button-menu.png);
+  background-size: 100%;
   color:white;
   display:block;
   -webkit-border-radius: 50%;
