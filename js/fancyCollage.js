@@ -31,7 +31,6 @@
     };
 
     FancyCollage.prototype.init = function () {
-        debugger;
         this._pictureIndex = 0;
         this._elementIndex = 0;
         this.createBoxes();
@@ -155,27 +154,43 @@
             randomOrder(me._randomOrderItems);
         }
 
-        if(me._elementIndex > me._randomOrderItems.length){
-            callback();
-        } else {
-            if(me._pictureIndex > me._randomOrderPictures.length){
-                me._pictureIndex = 0;
-            }
-
-            var i =document.createElement("div");
-            $(i).css("background-image", "url(" + me._randomOrderPictures[me._pictureIndex].src + ")")
-                .css("opacity", "0")
-                .appendTo(me._randomOrderItems[me._elementIndex])
-                .ready(function(){
-                    setTimeout(function(){
-                        $(".fancyCollageItem div").css("opacity", "1");
-                        loadNextPicture(me, callback);
-                    }, 500);
-                });
-
-            me._pictureIndex ++;
-            me._elementIndex ++;
+        if(me._elementIndex > me._randomOrderItems.length -1) {
+            me._elementIndex = 0;
         }
+
+        if(me._pictureIndex > me._randomOrderPictures.length -1){
+            me._pictureIndex = 0;
+        }
+
+        var item;
+        var timeToWait;
+        if($(me._randomOrderItems[me._elementIndex]).has("div").length === 0){
+            timeToWait = 500;
+            var d = document.createElement("div");
+            item = $(d);
+            item.appendTo(me._randomOrderItems[me._elementIndex])
+                .css("opacity", "0")
+                .css({backgroundImage : 'url("' + me._randomOrderPictures[me._pictureIndex].src + '")'});
+        } else {
+            timeToWait = 2000;
+            item = $($(me._randomOrderItems[me._elementIndex]).children()[0]);
+            item.css("opacity", "0");
+
+            setTimeout(function(){
+                item.css({backgroundImage : 'url("' + me._randomOrderPictures[me._pictureIndex].src + '")'})
+            },2000)
+        }
+
+
+        item.ready(function(){
+                setTimeout(function(){
+                    item.css("opacity", "1");
+                    loadNextPicture(me, callback);
+                }, timeToWait);
+            })
+
+        me._pictureIndex ++;
+        me._elementIndex ++;
     }
 
     FancyCollage.prototype.loadPictures= function (callback) {

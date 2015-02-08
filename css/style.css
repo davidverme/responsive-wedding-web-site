@@ -335,10 +335,6 @@ header{
   max-height:370px;
   margin-top:4%;
   margin-bottom:2%;
-  -webkit-transform: translateY(15%);
-  -moz-transform: translateY(15%);
-  -ms-transform: translateY(15%);
-  transform: translateY(15%);
 }
 
 .square-all-top img {

@@ -15,10 +15,6 @@
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    -webkit-transition: background-image 2s linear;
-    -moz-transition: background-image 2s linear;
-    -o-transition: background-image 2s linear;
-    transition: background-image 2s linear;
     -webkit-transition: opacity 2s linear;
     -moz-transition: opacity 2s linear;
     -o-transition: opacity 2s linear;
