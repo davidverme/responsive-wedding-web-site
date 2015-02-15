@@ -1,3 +1,23 @@
+Pace.on("done", function(e) {
+    $(".main-content").fadeIn(2000);
+    $(".fittext1").fitText(1, {
+        minFontSize: "15px",
+        maxFontSize: "30px"
+    });
+    $(".fittext2").fitText(.4, {
+        minFontSize: "30px",
+        maxFontSize: "86px"
+    });
+    $(".fittext3").fitText(.4, {
+        minFontSize: "30px",
+        maxFontSize: "86px"
+    });
+    $(".fittext4").fitText(1.5, {
+        minFontSize: "15px",
+        maxFontSize: "24px"
+    });
+});
+
 jQuery("html").removeClass("no-js").addClass("js");
 if (navigator.appVersion.indexOf("Mac") !== -1) {
     jQuery("html").addClass("osx")
@@ -11,22 +31,6 @@ jQuery(document).ready(function(e) {
         slideshow: 5e3,
         autoplay_slideshow: false,
         social_tools: false
-    });
-    e(".fittext1").fitText(1, {
-        minFontSize: "15px",
-        maxFontSize: "30px"
-    });
-    e(".fittext2").fitText(.4, {
-        minFontSize: "30px",
-        maxFontSize: "86px"
-    });
-    e(".fittext3").fitText(.4, {
-        minFontSize: "30px",
-        maxFontSize: "86px"
-    });
-    e(".fittext4").fitText(1.5, {
-        minFontSize: "15px",
-        maxFontSize: "24px"
     });
     (function() {
         e(window).load(function() {

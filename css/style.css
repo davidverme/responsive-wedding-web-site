@@ -37,6 +37,7 @@ body {
 .main-content {
   position: absolute;
   width: 100%;
+  display: none;
 }
 
 .main-content section{
