@@ -30,10 +30,6 @@ body {
   height: 70%;
 }
 
-.full-height {
-  height: 100%;
-}
-
 .main-content {
   position: absolute;
   width: 100%;
@@ -408,6 +404,7 @@ header{
   font-style:italic;
   line-height:150%;
   font-family: 'Stalemate', sans-serif;
+  font-size: 4em;
   padding:0px;
   margin:0px;
 

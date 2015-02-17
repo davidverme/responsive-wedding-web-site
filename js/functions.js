@@ -1,3 +1,7 @@
+Pace.on("start", function(){
+
+})
+
 Pace.on("done", function(e) {
     $(".main-content").fadeIn(2000);
     $(".fittext1").fitText(1, {
