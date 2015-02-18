@@ -70,7 +70,7 @@ jQuery(document).ready(function(e) {
             text: t.attr("title")
         }).appendTo(".select-menu")
     });
-    e(window).scroll(function() {
+    /*e(window).scroll(function() {
         var t = e(window).scrollTop();
         e('.navi a[href*="home"]').addClass("active");
         e('.navi a[href*="about"]').removeClass("active");
@@ -118,7 +118,7 @@ jQuery(document).ready(function(e) {
             e('.navi a[href*="gallery"]').removeClass("active");
             e('.navi a[href*="contact"]').addClass("active")
         }
-    });
+    });*/
     $("header").css("height", $(window).height());
     //$("#my-background").css("background-size", "auto " + ($(window).height() * 1.5).toString() + "px");
 
