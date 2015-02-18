@@ -1,3 +1,53 @@
+function checkNavItem(e){
+ var t = e(window).scrollTop();
+        e('.navi a[href*="home"]').addClass("active");
+        e('.navi a[href*="about"]').removeClass("active");
+        e('.navi a[href*="location"]').removeClass("active");
+        e('.navi a[href*="gifts"]').removeClass("active");
+        e('.navi a[href*="tableware"]').removeClass("active");
+        e('.navi a[href*="gallery"]').removeClass("active");
+        e('.navi a[href*="contact"]').removeClass("active");
+        if (t >= e("#home").height() + e("#slide").height() - 60) {
+            e('.navi a[href*="home"]').removeClass("active");
+            e('.navi a[href*="about"]').addClass("active")
+        }
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height()) {
+            e('.navi a[href*="home"]').removeClass("active");
+            e('.navi a[href*="about"]').removeClass("active");
+            e('.navi a[href*="location"]').addClass("active")
+        }
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height()) {
+            e('.navi a[href*="home"]').removeClass("active");
+            e('.navi a[href*="about"]').removeClass("active");
+            e('.navi a[href*="location"]').removeClass("active");
+            e('.navi a[href*="gifts"]').addClass("active")
+        }
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height()) {
+            e('.navi a[href*="home"]').removeClass("active");
+            e('.navi a[href*="about"]').removeClass("active");
+            e('.navi a[href*="location"]').removeClass("active");
+            e('.navi a[href*="gifts"]').removeClass("active");
+            e('.navi a[href*="tableware"]').addClass("active")
+        }
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height() + e("#tableware").height()) {
+            e('.navi a[href*="home"]').removeClass("active");
+            e('.navi a[href*="about"]').removeClass("active");
+            e('.navi a[href*="location"]').removeClass("active");
+            e('.navi a[href*="gifts"]').removeClass("active");
+            e('.navi a[href*="tableware"]').removeClass("active");
+            e('.navi a[href*="gallery"]').addClass("active")
+        }
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height() + e("#tableware").height() + e("#gallery").height()) {
+            e('.navi a[href*="home"]').removeClass("active");
+            e('.navi a[href*="about"]').removeClass("active");
+            e('.navi a[href*="location"]').removeClass("active");
+            e('.navi a[href*="gifts"]').removeClass("active");
+            e('.navi a[href*="tableware"]').removeClass("active");
+            e('.navi a[href*="gallery"]').removeClass("active");
+            e('.navi a[href*="contact"]').addClass("active")
+        }
+}
+
 Pace.on("start", function(){
 
 })
@@ -56,6 +106,13 @@ jQuery(document).ready(function(e) {
         offset: {
             top: 0,
             left: 0
+        },
+        onBefore: function(){
+            e.localScrollEvent = true;
+        },
+        onAfter: function(){
+            checkNavItem(e);
+            e.localScrollEvent = false;
         }
     });
     e(".select-menu").change(function() {
@@ -77,55 +134,15 @@ jQuery(document).ready(function(e) {
             text: t.attr("title")
         }).appendTo(".select-menu")
     });
-    /*e(window).scroll(function() {
-        var t = e(window).scrollTop();
-        e('.navi a[href*="home"]').addClass("active");
-        e('.navi a[href*="about"]').removeClass("active");
-        e('.navi a[href*="location"]').removeClass("active");
-        e('.navi a[href*="gifts"]').removeClass("active");
-        e('.navi a[href*="tableware"]').removeClass("active");
-        e('.navi a[href*="gallery"]').removeClass("active");
-        e('.navi a[href*="contact"]').removeClass("active");
-        if (t >= e("#home").height() + e("#slide").height() - 60) {
-            e('.navi a[href*="home"]').removeClass("active");
-            e('.navi a[href*="about"]').addClass("active")
+
+    e(window).scroll(function() {
+        if(e.localScrollEvent){
+            return;
         }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height()) {
-            e('.navi a[href*="home"]').removeClass("active");
-            e('.navi a[href*="about"]').removeClass("active");
-            e('.navi a[href*="location"]').addClass("active")
-        }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height()) {
-            e('.navi a[href*="home"]').removeClass("active");
-            e('.navi a[href*="about"]').removeClass("active");
-            e('.navi a[href*="location"]').removeClass("active");
-            e('.navi a[href*="gifts"]').addClass("active")
-        }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height()) {
-            e('.navi a[href*="home"]').removeClass("active");
-            e('.navi a[href*="about"]').removeClass("active");
-            e('.navi a[href*="location"]').removeClass("active");
-            e('.navi a[href*="gifts"]').removeClass("active");
-            e('.navi a[href*="tableware"]').addClass("active")
-        }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height() + e("#tableware").height()) {
-            e('.navi a[href*="home"]').removeClass("active");
-            e('.navi a[href*="about"]').removeClass("active");
-            e('.navi a[href*="location"]').removeClass("active");
-            e('.navi a[href*="gifts"]').removeClass("active");
-            e('.navi a[href*="tableware"]').removeClass("active");
-            e('.navi a[href*="gallery"]').addClass("active")
-        }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height() + e("#tableware").height() + e("#gallery").height()) {
-            e('.navi a[href*="home"]').removeClass("active");
-            e('.navi a[href*="about"]').removeClass("active");
-            e('.navi a[href*="location"]').removeClass("active");
-            e('.navi a[href*="gifts"]').removeClass("active");
-            e('.navi a[href*="tableware"]').removeClass("active");
-            e('.navi a[href*="gallery"]').removeClass("active");
-            e('.navi a[href*="contact"]').addClass("active")
-        }
-    });*/
+        checkNavItem(e);
+
+       
+    });
     $("header").css("height", $(window).height());
     //$("#my-background").css("background-size", "auto " + ($(window).height() * 1.5).toString() + "px");
 
