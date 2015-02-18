@@ -105,7 +105,7 @@ jQuery(document).ready(function(e) {
         topSpacing: 0
     });
     e("nav").localScroll({
-        duration: 600,
+        duration: 1000,
         offset: {
             top: 0,
             left: 0
