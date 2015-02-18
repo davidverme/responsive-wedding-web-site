@@ -1,5 +1,5 @@
 function checkHeaderHeight(){
-    $("header").css("height", $(window).height());
+    $("header").css("height", $(window).height() * 1.1);
 }
 
 function checkNavItem(e){
