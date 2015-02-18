@@ -28,6 +28,7 @@ body {
 
 #home {
   height: 70%;
+  display: none;
 }
 
 .main-content {
@@ -404,7 +405,7 @@ header{
   font-style:italic;
   line-height:150%;
   font-family: 'Stalemate', sans-serif;
-  font-size: 4em;
+  font-size: 6em;
   padding:0px;
   margin:0px;
 
@@ -454,6 +455,7 @@ header{
 	text-align: center;
 	padding-bottom: 0%;
   padding-top:1.8%;
+  display: none;
 }
 
 ul.navi{

@@ -4,6 +4,13 @@ Pace.on("start", function(){
 
 Pace.on("done", function(e) {
     $(".main-content").fadeIn(2000);
+    setTimeout(function(){
+        $("#home").fadeIn(1000);
+        setTimeout(function(){
+            $("#nav").fadeIn(1000);
+        }, 800);
+    }, 1500);
+
     $(".fittext1").fitText(1, {
         minFontSize: "15px",
         maxFontSize: "30px"
