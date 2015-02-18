@@ -28,13 +28,13 @@ body {
 
 #home {
   height: 70%;
-  display: none;
+  opacity: 0;
 }
 
 .main-content {
   position: absolute;
   width: 100%;
-  display: none;
+  opacity: 0;
 }
 
 .main-content section{
@@ -455,7 +455,7 @@ header{
 	text-align: center;
 	padding-bottom: 0%;
   padding-top:1.8%;
-  display: none;
+  opacity: 0;
 }
 
 ul.navi{
@@ -774,4 +774,31 @@ input[type="submit"] {
 .spacer160 {
   height:160px;
   clear:both;
+}
+
+.customFadeIn1 {
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.customFadeIn2 {
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+@-webkit-keyframes fadeIn{
+  from {opacity:0;}
+  to {opacity:100;}
+}
+
+@-moz-keyframes fadeIn{
+  from {opacity:0;}
+  to {opacity:100;}
+}
+
+@keyframes fadeIn{
+  from {opacity:0;}
+  to {opacity:100;}
 }

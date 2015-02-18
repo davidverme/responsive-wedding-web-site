@@ -53,11 +53,14 @@ Pace.on("start", function(){
 })
 
 Pace.on("done", function(e) {
-    $(".main-content").fadeIn(2000);
+    $(".main-content").addClass("customFadeIn2");
+    $(".main-content").css("opacity", "1");
     setTimeout(function(){
-        $("#home").fadeIn(1000);
+        $("#home").addClass("customFadeIn1");
+        $("#home").css("opacity", "1");
         setTimeout(function(){
-            $("#nav").fadeIn(1000);
+            $("#nav").addClass("customFadeIn1");
+            $("#nav").css("opacity", "1");
         }, 800);
     }, 1500);
 
