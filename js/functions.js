@@ -1,3 +1,7 @@
+function checkHeaderHeight(){
+    $("header").css("height", $(window).height());
+}
+
 function checkNavItem(e){
  var t = e(window).scrollTop();
         e('.navi a[href*="home"]').addClass("active");
@@ -146,7 +150,7 @@ jQuery(document).ready(function(e) {
 
        
     });
-    $("header").css("height", $(window).height());
+    checkHeaderHeight();
     //$("#my-background").css("background-size", "auto " + ($(window).height() * 1.5).toString() + "px");
 
     $.getJSON("img/collage.js", function(data) {
