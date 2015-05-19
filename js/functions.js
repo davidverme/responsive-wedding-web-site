@@ -24,16 +24,16 @@ function checkNavItem(e){
             e('.navi a[href*="home"]').removeClass("active");
             e('.navi a[href*="about"]').removeClass("active");
             e('.navi a[href*="location"]').removeClass("active");
-            e('.navi a[href*="gifts"]').addClass("active")
+            e('.navi a[href*="tableware"]').addClass("active")
         }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height()) {
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#tableware").height()) {
             e('.navi a[href*="home"]').removeClass("active");
             e('.navi a[href*="about"]').removeClass("active");
             e('.navi a[href*="location"]').removeClass("active");
-            e('.navi a[href*="gifts"]').removeClass("active");
-            e('.navi a[href*="tableware"]').addClass("active")
+            e('.navi a[href*="tableware"]').removeClass("active");
+            e('.navi a[href*="gifts"]').addClass("active")
         }
-        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#gifts").height() + e("#tableware").height()) {
+        if (t >= e("#home").height() + e("#slide").height() + e("#about").height() + e("#location").height() + e("#tableware").height() + e("#gifts").height()) {
             e('.navi a[href*="home"]').removeClass("active");
             e('.navi a[href*="about"]').removeClass("active");
             e('.navi a[href*="location"]').removeClass("active");
