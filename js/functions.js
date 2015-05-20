@@ -156,4 +156,19 @@ jQuery(document).ready(function(e) {
     $.getJSON("img/collage.js", function(data) {
         //$("#my-fancy-collage").fancyCollage(data);
     });
+
+    $('.gallery').each(function() { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
+            gallery: {
+                enabled:true,
+                preload: [0,2], // read about this option in next Lazy-loading section
+                navigateByImgClick: true,
+                tPrev: 'Anterior', // title for left button
+                tNext: 'Siguiente', // title for right button
+                tCounter: '<span class="mfp-counter">%curr% de %total%</span>' // markup of counter
+            }
+        });
+    });
 });
