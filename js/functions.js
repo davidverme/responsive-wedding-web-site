@@ -171,4 +171,11 @@ jQuery(document).ready(function(e) {
             }
         });
     });
+
+    $('.popup-image').each(function(){
+        $(this).magnificPopup({
+            type: 'image'
+            // other options
+        });
+    });
 });

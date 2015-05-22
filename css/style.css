@@ -120,7 +120,7 @@ header{
   height: 600px\9; /* IE 8 and below */
   color:#000;    
   display:block;
-  background-image: url("../img/site_photos/ring_3.jpg");
+  background-image: url("../img/site_photos/ring_bg.jpg");
   background-size: cover;
   background-position: center top;
 }
@@ -801,4 +801,8 @@ input[type="submit"] {
 @keyframes fadeIn{
   from {opacity:0;}
   to {opacity:100;}
+}
+
+.mfp-close {
+    cursor: pointer;
 }
