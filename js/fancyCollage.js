@@ -35,7 +35,7 @@
         this._elementIndex = 0;
         this.createBoxes();
         this.makeItFancy();
-        this.loadPictures(function(){
+        this.loadPicturesV2(function(){
             //this.startPictureChangeAnimation();
         });
     };
@@ -146,6 +146,18 @@
         return array;
     }
 
+    function loadPictureV2(me, elementIndex, pictureIndex) {
+        var d = document.createElement("div");
+        item = $(d);
+        item.css("opacity", "0")
+            .css({backgroundImage : 'url("' + me._randomOrderPictures[pictureIndex].src + '")'})
+            .appendTo(me._randomOrderItems[elementIndex]);
+
+        item.ready(function(){
+            item.css("opacity", "1");
+        })
+    }
+
     function loadPicture(me, callback) {
         var d = document.createElement("div");
         item = $(d);
@@ -194,6 +206,26 @@
             },2000)
         } else {
             loadPicture(me, callback);
+        }
+    }
+
+    FancyCollage.prototype.loadPicturesV2= function () {
+        var me = this;
+
+        if(!me._randomOrderPictures){
+            me._randomOrderPictures = me.options.pictures;
+            randomOrder(me._randomOrderPictures);
+        }
+
+        if(!me._randomOrderItems){
+            me._randomOrderItems = $(".fancyCollageItem");
+            randomOrder(me._randomOrderItems);
+        }
+
+        while(me._elementIndex < me._randomOrderItems.length){
+            loadPictureV2(me, me._elementIndex, me._pictureIndex);
+            me._elementIndex ++;
+            me._pictureIndex ++;
         }
     }
 
