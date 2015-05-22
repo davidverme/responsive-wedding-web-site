@@ -84,6 +84,12 @@ Pace.on("done", function(e) {
         minFontSize: "15px",
         maxFontSize: "24px"
     });
+
+    setTimeout(function(){
+        $.getJSON("img/collage.js", function(data) {
+            $(".myFancyCollage").fancyCollage(data);
+        });
+    },1000);
 });
 
 jQuery("html").removeClass("no-js").addClass("js");
@@ -93,12 +99,6 @@ if (navigator.appVersion.indexOf("Mac") !== -1) {
 jQuery(document).ready(function(e) {
     e("a[data-rel]").each(function() {
         e(this).attr("rel", e(this).data("rel"))
-    });
-    e("a[rel^='prettyPhoto']").prettyPhoto({
-        animation_speed: "normal",
-        slideshow: 5e3,
-        autoplay_slideshow: false,
-        social_tools: false
     });
     (function() {
         e(window).load(function() {
@@ -152,10 +152,6 @@ jQuery(document).ready(function(e) {
     });
     checkHeaderHeight();
     //$("#my-background").css("background-size", "auto " + ($(window).height() * 1.5).toString() + "px");
-
-    $.getJSON("img/collage.js", function(data) {
-        //$("#my-fancy-collage").fancyCollage(data);
-    });
 
     $('.gallery').each(function() { // the containers for all your galleries
         $(this).magnificPopup({

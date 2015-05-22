@@ -54,8 +54,11 @@
         this._calculateSize();
         for(var i = 0; i < this._rows; i++){
             for(var j = 0; j < this._columns; j++){
+                var a = document.createElement("a");
+                $(a).appendTo(el)
+                    .attr("target", "_blank");
                 var p = document.createElement("div");
-                $(p).appendTo(el)
+                $(p).appendTo($(a))
                     .addClass("fancyCollageItem")
                     .addClass("smallFancyCollageItem")
                     .css("width", this._size)

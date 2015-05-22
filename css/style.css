@@ -804,5 +804,15 @@ input[type="submit"] {
 }
 
 .mfp-close {
-    cursor: pointer;
+    cursor: pointer!important;
+}
+
+.social-icons {
+  list-style-type: none;
+}
+
+.social-icon {
+  width: 30px;
+  display: inline;
+  margin: 5px;
 }
