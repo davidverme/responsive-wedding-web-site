@@ -35,9 +35,7 @@
         this._elementIndex = 0;
         this.createBoxes();
         this.makeItFancy();
-        this.loadPicturesV2(function(){
-            //this.startPictureChangeAnimation();
-        });
+        this.loadPictures();
     };
 
     FancyCollage.prototype.createBoxes = function () {
@@ -146,70 +144,47 @@
         return array;
     }
 
-    function loadPictureV2(me, elementIndex, pictureIndex) {
-        var d = document.createElement("div");
-        item = $(d);
-        item.css("opacity", "0")
-            .css({backgroundImage : 'url("' + me._randomOrderPictures[pictureIndex].src + '")'})
-            .appendTo(me._randomOrderItems[elementIndex]);
-
-        item.ready(function(){
-            item.css("opacity", "1");
-        })
-    }
-
-    function loadPicture(me, callback) {
-        var d = document.createElement("div");
-        item = $(d);
-        item.css("opacity", "0")
-            .css({backgroundImage : 'url("' + me._randomOrderPictures[me._pictureIndex].src + '")'})
-            .appendTo(me._randomOrderItems[me._elementIndex]);
-
-        item.ready(function(){
+    function loadPicture(me, elementIndex, pictureIndex) {
+        var d;
+        var item;
+        if($(me._randomOrderItems[elementIndex]).has("div").length === 0) {
+            d = document.createElement("div");
+            item = $(d);
+            item.css("opacity", "1")
+                .css({backgroundImage : 'url("' + me._randomOrderPictures[pictureIndex].src + '")'})
+                .appendTo(me._randomOrderItems[elementIndex]);
+            item.ready(function(){
                 setTimeout(function(){
                     item.css("opacity", "1");
-
-                    me._pictureIndex ++;
-                    me._elementIndex ++;
-                    loadNextPicture(me, callback);
-                }, 500);
+                    }, 200);
             })
+
+        } else {
+            d = $(me._randomOrderItems[elementIndex]).children()[0];
+            item = $(d);
+            item.css({backgroundImage : 'url("' + me._randomOrderPictures[pictureIndex].src + '")'});
+        }
     }
 
-    function loadNextPicture(me, callback){
-        if(!me._randomOrderPictures){
-            me._randomOrderPictures = me.options.pictures;    
-            randomOrder(me._randomOrderPictures);
-        }
-
-        if(!me._randomOrderItems){
-            me._randomOrderItems = $(".fancyCollageItem");
-            randomOrder(me._randomOrderItems);
-        }
-
-        if(me._elementIndex > me._randomOrderItems.length -1) {
+    function nextElementIndex(me){
+        me._elementIndex ++;
+        if(me._elementIndex > me._randomOrderItems.length - 1){
             me._elementIndex = 0;
         }
 
-        if(me._pictureIndex > me._randomOrderPictures.length -1){
+        return me._elementIndex;
+    }
+
+    function nextPictureIndex(me){
+        me._pictureIndex ++;
+        if(me._pictureIndex> me._randomOrderPictures.length - 1){
             me._pictureIndex = 0;
         }
 
-        var item;
-        if($(me._randomOrderItems[me._elementIndex]).has("div").length !== 0){
-            item = $($(me._randomOrderItems[me._elementIndex]).children()[0]);
-            item.css("opacity", "0");
-
-            setTimeout(function(){
-                item.remove();
-                loadPicture(me, callback);
-            },2000)
-        } else {
-            loadPicture(me, callback);
-        }
+        return me._pictureIndex;
     }
 
-    FancyCollage.prototype.loadPicturesV2= function () {
+    FancyCollage.prototype.loadPictures= function () {
         var me = this;
 
         if(!me._randomOrderPictures){
@@ -222,51 +197,18 @@
             randomOrder(me._randomOrderItems);
         }
 
-        while(me._elementIndex < me._randomOrderItems.length){
-            loadPictureV2(me, me._elementIndex, me._pictureIndex);
-            me._elementIndex ++;
-            me._pictureIndex ++;
-        }
+        var interval = setInterval(function(){
+            loadPicture(me, nextElementIndex(me), nextPictureIndex(me));
+            if(me._elementIndex == me._randomOrderItems.length - 1){
+                setTimeout(function(){
+                    clearInterval(interval);
+                    interval = setInterval(function(){
+                        loadPicture(me, nextElementIndex(me), nextPictureIndex(me));
+                    }, 2000);
+                }, 2000);
+            }
+        }, 500);
     }
-
-    FancyCollage.prototype.loadPictures= function (callback) {
-        loadNextPicture(this, callback);
-    };
-
-    FancyCollage.prototype.startPictureChangeAnimation = function(){
-        var me = this;
-        if(!me._timeAnimationList) {
-            me._timeAnimationList = [];
-        }
-
-        for(var i = 0; i < me._timeAnimationList.length; i++){
-            clearInterval(me._timeAnimationList[i]);
-        }
-
-        var q = me._rows * me._columns * 10 / 100;
-        for(i = 0; i < q; i++){
-            var timeItem;
-            timeItem = setInterval(function () {
-                var l = me._items;
-                var posX = Math.floor(Math.random() * (me._rows));
-                var posY = Math.floor(Math.random() * (me._columns));
-                while (!l[posX][posY]) {
-                    posX = Math.floor(Math.random() * (me._rows));
-                    posY = Math.floor(Math.random() * (me._columns));
-                }
-                var pictures = me.options.pictures;
-
-                if (!pictures[me._pictureIndex]) {
-                    me._pictureIndex = 0;
-                }
-
-                $($(l[posX][posY]).children()[0]).css("background-image", "url(" + pictures[me._pictureIndex].src + ")");
-
-                me._pictureIndex++;
-            }, 2000 + (Math.random() * 2000));
-            me._timeAnimationList[i] = timeItem;
-        }
-    };
 
     $.fn.fancyCollage = function ( options ) {
         return this.each(function () {

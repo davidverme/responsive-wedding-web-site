@@ -66,6 +66,10 @@
     border: none;
     width:98%;
   }
+
+    .spacer160 {
+        height:100px !important;
+    }
 } 
 
 
@@ -73,7 +77,7 @@
 
 @media (max-width: 568px) {
   .spacer160 {
-    height:115px !important;
+    height:100px !important;
   }
     .spacer35 {
     height:20px !important;
@@ -113,7 +117,7 @@
     width: 100%;
   }
   .spacer160 {
-    height:110px !important;
+    height:70px !important;
   }
     .spacer35 {
     height:20px !important;
@@ -160,7 +164,7 @@
 
 @media (max-width: 380px) {
   .spacer160 {
-    height:100px !important;
+    height:70px !important;
   }
     .spacer35 {
     height:5px !important;
@@ -177,7 +181,7 @@
     width: 100%;
   }
   .spacer160 {
-    height:105px !important;
+    height:60px !important;
   }
     .spacer35 {
     height:10px !important;
@@ -211,7 +215,7 @@
 
 @media (max-width: 240px) {
   .spacer160 {
-    height:110px !important;
+    height:50px !important;
   }
     .spacer35 {
     height:5px !important;

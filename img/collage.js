@@ -19,7 +19,6 @@
     {"src": "img/photos/2010_1.jpg", "title":"2010: Casa de alfajores. La Cumbresita"},
     {"src": "img/photos/2010_2.jpg", "title":"2010: En la Cumbresita"},
     {"src": "img/photos/2010_3.jpg", "title":"2010: La Cumbresita"},
-    {"src": "img/photos/2010_3.jpg", "title":"2010: La Cumbresita"},
     {"src": "img/photos/2013_1.jpg", "title":"2013: Año nuevo en casa de Naty"},
     {"src": "img/photos/2013_2.jpg", "title":"2013: Festejo compromiso en Cartagena"},
     {"src": "img/photos/2014_1.jpg", "title":"2013: En el Parque de la Costa"},
