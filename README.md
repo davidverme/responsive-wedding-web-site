@@ -1,4 +1,4 @@
-responsibe-wedding-web-site
+responsive-wedding-web-site
 ===========================
 
 A responsibe wedding web site
