@@ -1,0 +1,23 @@
+{
+  "name": "responsive-wedding-web-site",
+  "version": "1.0.0",
+  "description": "responsive-wedding-web-site ===========================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidverme/responsive-wedding-web-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidverme/responsive-wedding-web-site/issues"
+  },
+  "homepage": "https://github.com/davidverme/responsive-wedding-web-site#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
